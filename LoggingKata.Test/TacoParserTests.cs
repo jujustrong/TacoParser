@@ -21,7 +21,10 @@ namespace LoggingKata.Test
 
         [Theory]
         [InlineData("34.073638, -84.677017, Taco Bell Acwort...", -84.677017)]
-        //Add additional inline data. Refer to your CSV file.
+        [InlineData("34.996237,-85.291147,Taco Bell Chattanooga...", -85.291147)]
+        [InlineData("34.888408,-85.267909,Taco Bell Chickamaug...", -85.267909)]
+        [InlineData("33.796264,-84.224516,Taco Bell Stone Mountain...", -84.224516)]
+        [InlineData("34.118399,-87.989494,Taco Bell Hamilto...", -87.989494)]
         public void ShouldParseLongitude(string line, double expected)
         {
             // TODO: Complete the test with Arrange, Act, Assert steps below.
@@ -31,10 +34,13 @@ namespace LoggingKata.Test
             //       represents a TacoBell location
 
             //Arrange
+            var tacoParser1 = new TacoParser();
 
             //Act
+            var actual = tacoParser1.Parse(line).Location.Longitude;
 
             //Assert
+            Assert.Equal(expected, actual);
         }
 
 
