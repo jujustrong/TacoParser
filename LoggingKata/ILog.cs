@@ -8,5 +8,10 @@ namespace LoggingKata
         void LogWarning(string log);
         void LogInfo(string log);
         void LogDebug(string log);
+
+        static bool LogStartApp()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

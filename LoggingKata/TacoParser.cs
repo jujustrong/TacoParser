@@ -9,8 +9,6 @@
         
         public ITrackable Parse(string line)
         {
-            logger.LogInfo("Parse Success...");
-            
             var cells = line.Split(',');
             
             if (cells.Length < 3)
